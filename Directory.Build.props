@@ -1,0 +1,22 @@
+<Project>
+  <Import Project="$(MSBuildThisFileDirectory)Directory.Version.props" />
+
+  <PropertyGroup>
+    <Nullable>enable</Nullable>
+    <LangVersion>latest</LangVersion>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <RepositoryType>git</RepositoryType>
+    <RepositoryRoot>$(MSBuildThisFileDirectory)</RepositoryRoot>
+    <RepositoryUrl>https://github.com/alexmg/Starrysky</RepositoryUrl>
+    <Authors>Alex Meyer-Gleaves</Authors>
+    <Company>alexmg.dev</Company>
+    <Copyright>Copyright © 2024 Alex Meyer-Gleaves</Copyright>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageReleaseNotes>https://github.com/alexmg/Starrysky/blob/main/CHANGELOG.md</PackageReleaseNotes>
+  </PropertyGroup>
+</Project>

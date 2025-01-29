@@ -1,0 +1,50 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net9.0</TargetFramework>
+    <UserSecretsId>Starrysky</UserSecretsId>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <PackAsTool>true</PackAsTool>
+    <ToolCommandName>starrysky</ToolCommandName>
+    <Description>.NET tool to post a random GitHub star to Bluesky</Description>
+    <PackageTags>GitHub;Bluesky</PackageTags>
+    <PackageIcon>icon.png</PackageIcon>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <InternalsVisibleTo Include="$(AssemblyName).UnitTests" />
+    <InternalsVisibleTo Include="DynamicProxyGenAssembly2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="$(RepositoryRoot)\icon.png" Pack="true" PackagePath="" />
+    <None Include="$(RepositoryRoot)\README.md" Pack="true" PackagePath="" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AssemblyMetadata.Generators" Version="2.1.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="BlueskySharp" Version="0.24.11.2923-beta-0921c9b8f" />
+    <PackageReference Include="DotNet.ReproducibleBuilds" Version="1.2.25" PrivateAssets="All" />
+    <PackageReference Include="Dumpify" Version="0.6.6" />
+    <PackageReference Include="idunno.Bluesky" Version="0.2.1-prerelease" />
+    <PackageReference Include="JetBrains.Annotations" Version="2024.3.0" />
+    <PackageReference Include="LibGit2Sharp" Version="0.31.0" />
+    <PackageReference Include="LibGit2Sharp.NativeBinaries" Version="2.0.323" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.EnvironmentVariables" Version="9.0.1" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.UserSecrets" Version="9.0.1" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="9.0.1" />
+    <PackageReference Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="9.0.1" />
+    <PackageReference Include="Octokit" Version="14.0.0" />
+    <PackageReference Include="SonarAnalyzer.CSharp" Version="10.6.0.109712" PrivateAssets="All" />
+    <PackageReference Include="Spectre.Console.Cli" Version="0.49.2-preview.0.68" />
+    <PackageReference Include="TestableIO.System.IO.Abstractions.Wrappers" Version="21.2.12" />
+  </ItemGroup>
+
+</Project>

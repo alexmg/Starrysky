@@ -1,0 +1,78 @@
+{
+  "$schema": "https://raw.githubusercontent.com/googleapis/release-please/main/schemas/config.json",
+  "release-type": "simple",
+  "include-v-in-tag": true,
+  "changelog-sections": [
+    {
+      "type": "feat",
+      "section": "🚀 Features",
+      "hidden": false
+    },
+    {
+      "type": "fix",
+      "section": "🐛 Bug Fixes",
+      "hidden": false
+    },
+    {
+      "type": "deps",
+      "section": "🌲 Dependencies",
+      "hidden": false
+    },
+    {
+      "type": "docs",
+      "section": "📖 Documentation Improvements",
+      "hidden": false
+    },
+    {
+      "type": "perf",
+      "section": "⚡ Performance Improvements",
+      "hidden": false
+    },
+    {
+      "type": "test",
+      "section": "🧪 Tests",
+      "hidden": false
+    },
+    {
+      "type": "style",
+      "section": "🎨 Design Improvements",
+      "hidden": false
+    },
+    {
+      "type": "iac",
+      "section": "👷‍ Infrastructure as Code",
+      "hidden": true
+    },
+    {
+      "type": "ci",
+      "section": "🔁 Continuous Integration",
+      "hidden": true
+    },
+    {
+      "type": "chore",
+      "section": "🧰 Maintenance",
+      "hidden": true
+    },
+    {
+      "type": "refactor",
+      "section": "🧹 Code Refactoring",
+      "hidden": true
+    },
+    {
+      "type": "revert",
+      "section": "⏪ Revert",
+      "hidden": true
+    }
+  ],
+  "packages": {
+    ".": {
+      "extra-files": [
+        {
+          "type": "xml",
+          "path": "Directory.Version.props",
+          "xpath": "/Project/PropertyGroup/Version"
+        }
+      ]
+    }
+  }
+}

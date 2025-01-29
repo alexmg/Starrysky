@@ -1,0 +1,53 @@
+name: Release Please
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    name: Build
+    uses: ./.github/workflows/build.yml
+
+  release:
+    name: Release
+    needs: build
+    permissions:
+      contents: write
+      packages: write
+      pull-requests: write
+    env:
+      DOTNET_NOLOGO: true
+      DOTNET_CLI_TELEMETRY_OPTOUT: true
+    runs-on: ubuntu-latest
+    steps:
+      - name: 🛒 Checkout
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          fetch-depth: 0
+          filter: tree:0
+
+      - name: 🏭 Setup .NET SDK
+        uses: actions/setup-dotnet@87b7050bc53ea08284295505d98d2aa94301e852 # v4.2.0
+        with:
+          dotnet-version: '9.0.x'
+
+      - name: 🔍 Display .NET information
+        run: dotnet --info
+
+      - name: 📦 Build package
+        run: dotnet pack --configuration Release
+
+      - name: 🙏 Release Please
+        uses: googleapis/release-please-action@v4
+        id: release
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: 🚀 Push package
+        if: ${{ steps.release.outputs.release_created }}
+        run: >-
+          dotnet nuget push **/*.nupkg
+          --source https://nuget.pkg.github.com/alexmg/index.json
+          --api-key ${{ secrets.GITHUB_TOKEN }}
