@@ -83,6 +83,8 @@ on:
 jobs:
   post:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4.2.2
@@ -106,7 +108,7 @@ jobs:
             --password ${{ secrets.BLUESKY_PASSWORD }}
 ```
 
-To use this workflow ensure that you have added [secrets](https://docs.github.com/en/actions/security-for-github-actions/security-guides/using-secrets-in-github-actions) to your repository for the `GITHUB_TOKEN`, `BLUESKY_HANDLE`, and `BLUESKY_PASSWORD`. Update the `cron` expression to a time that works best for your target audience.
+To use this workflow ensure that you have added [secrets](https://docs.github.com/en/actions/security-for-github-actions/security-guides/using-secrets-in-github-actions) to your repository for the `BLUESKY_HANDLE`, and `BLUESKY_PASSWORD`. The `GITHUB_TOKEN` secret is an [automatic token](https://docs.github.com/en/actions/security-for-github-actions/security-guides/automatic-token-authentication) created at the start of the workflow job and is assigned the `contents: write` permission as part of the job definition. Update the `cron` expression to a time (UTC) that works best for your target audience.
 
 ## Credits
 
