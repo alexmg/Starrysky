@@ -82,6 +82,7 @@ on:
 
 jobs:
   post:
+    name: Post to Bluesky
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -108,7 +109,24 @@ jobs:
             --password ${{ secrets.BLUESKY_PASSWORD }}
 ```
 
-To use this workflow ensure that you have added [secrets](https://docs.github.com/en/actions/security-for-github-actions/security-guides/using-secrets-in-github-actions) to your repository for the `BLUESKY_HANDLE`, and `BLUESKY_PASSWORD`. The `GITHUB_TOKEN` secret is an [automatic token](https://docs.github.com/en/actions/security-for-github-actions/security-guides/automatic-token-authentication) created at the start of the workflow job and is assigned the `contents: write` permission as part of the job definition. Update the `cron` expression to a time (UTC) that works best for your target audience.
+To use this workflow ensure that you have added [secrets](https://docs.github.com/en/actions/security-for-github-actions/security-guides/using-secrets-in-github-actions) to your repository for the `GITHUB_TOKEN`, `BLUESKY_HANDLE`, and `BLUESKY_PASSWORD`.
+
+The `GITHUB_TOKEN` should be a [fine-grained token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens#creating-a-fine-grained-personal-access-token) and should be restricted to accessing the repository that contains the GitHub workflow.
+
+Repository permissions:
+
+- Read access to metadata
+- Read and Write access to code
+
+User permissions:
+
+- Read access to starring
+
+These are permissions are required to query the GitHub API for your starred repositories and to commit the `history.json` file containing a list of repositories that have been posted to Bluesky.
+
+You can generate a Bluesky [App Password](https://bsky.app/settings/app-passwords) for the `BLUESKY_PASSWORD` secret.
+
+Update the `cron` expression to a time (UTC) that works best for your target audience.
 
 ## Credits
 
