@@ -1,5 +1,19 @@
 # Changelog
 
+## [1.0.1](https://github.com/alexmg/Starrysky/compare/v1.0.0...v1.0.1) (2025-01-30)
+
+
+### 🐛 Bug Fixes
+
+* Ensure exit code from command is returned from entry point ([4c8975e](https://github.com/alexmg/Starrysky/commit/4c8975e58e2d0ece5dcb91fa8a0b8941e5bdc41b))
+* Use github-actions[bot] for commit signature on GitHub Actions ([9631eb6](https://github.com/alexmg/Starrysky/commit/9631eb615851f9e353bca0d3b050520b91e57fc8))
+
+
+### 📖 Documentation Improvements
+
+* Add information on PAT to README ([d40343e](https://github.com/alexmg/Starrysky/commit/d40343e45598e79210a831d4beee327c0638206a))
+* Add workflow_dispatch info to README ([1790c41](https://github.com/alexmg/Starrysky/commit/1790c415431c0ae9365cfddec735b3893d3c0cde))
+
 ## 1.0.0 (2025-01-29)
 
 
