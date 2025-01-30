@@ -79,6 +79,13 @@ name: Daily Bluesky Post
 on:
   schedule:
     - cron: '0 0 * * *'
+  workflow_dispatch:
+    inputs:
+      dryRun:
+        required: false
+        default: false
+        description: "Execute a dry-run that does not post to Bluesky"
+        type: boolean
 
 jobs:
   post:
@@ -127,6 +134,8 @@ These are permissions are required to query the GitHub API for your starred repo
 You can generate a Bluesky [App Password](https://bsky.app/settings/app-passwords) for the `BLUESKY_PASSWORD` secret.
 
 Update the `cron` expression to a time (UTC) that works best for your target audience.
+
+The workflow includes the `workflow_dispatch` event to allow for manual triggering from the GitHub frontend. When triggering a manual run of the workflow an input is provided to optionally perform a dry-run.
 
 ## Credits
 
