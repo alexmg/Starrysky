@@ -29,4 +29,4 @@ var registrar = new TypeRegistrar(services);
 
 var app = new CommandApp<StarryskyCommand>(registrar);
 app.Configure(config => config.Settings.ApplicationName = Constants.ApplicationName);
-await app.RunAsync(args);
+return await app.RunAsync(args);
