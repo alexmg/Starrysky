@@ -28,9 +28,22 @@ internal sealed class GitRepository : IGitRepository
     {
         using var gitRepo = _factory.GetRepository(_repositoryRoot);
 
-        var signature = gitRepo.Config.BuildSignature(DateTimeOffset.Now)
-                        ?? throw new InvalidOperationException(
-                            "The author information was not found in the Git repository configuration");
+        var signature = gitRepo.Config.BuildSignature(DateTimeOffset.Now);
+        if (signature is null)
+        {
+            if (string.Equals(Environment.GetEnvironmentVariable("GITHUB_ACTIONS"), "true", StringComparison.OrdinalIgnoreCase))
+            {
+                signature = new Signature(
+                    "github-actions[bot]",
+                    "github-actions[bot]@users.noreply.github.com",
+                    DateTimeOffset.Now);
+            }
+            else
+            {
+                throw new InvalidOperationException(
+                    "The author information was not found in the Git repository configuration and not running under GitHub Actions");
+            }
+        }
 
         gitRepo.Index.Add(Constants.HistoryFileName);
 
