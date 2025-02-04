@@ -1,6 +1,6 @@
 # Starrysky
 
-![Logo](./icon.png)
+![Logo](https://raw.githubusercontent.com/alexmg/Starrysky/main/icon.png)
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://github.com/alexmg/Starrysky/blob/main/LICENSE)
 [![Nuget](https://img.shields.io/nuget/v/Starrysky?label=NuGet)](https://www.nuget.org/packages/Starrysky)
