@@ -111,12 +111,12 @@ jobs:
         run: dotnet tool install --global Starrysky
 
       - name: Execute global tool
-        run: >
-          starrysky \
-            --token ${{ secrets.GH_TOKEN }} \
-            --handle ${{ secrets.BLUESKY_HANDLE }} \
-            --password ${{ secrets.BLUESKY_PASSWORD }} \
-            --dry-run ${{ inputs.dryRun }}
+        run: >-
+          starrysky
+          --token ${{ secrets.GH_TOKEN }}
+          --handle ${{ secrets.BLUESKY_HANDLE }}
+          --password ${{ secrets.BLUESKY_PASSWORD }}
+          --dry-run ${{ inputs.dryRun }}
 ```
 
 To use this workflow ensure that you have added [secrets](https://docs.github.com/en/actions/security-for-github-actions/security-guides/using-secrets-in-github-actions) to your repository for the `GH_TOKEN`, `BLUESKY_HANDLE`, and `BLUESKY_PASSWORD`.
