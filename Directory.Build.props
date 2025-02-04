@@ -2,6 +2,7 @@
   <Import Project="$(MSBuildThisFileDirectory)Directory.Version.props" />
 
   <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
     <Nullable>enable</Nullable>
     <LangVersion>latest</LangVersion>
     <ImplicitUsings>enable</ImplicitUsings>
