@@ -65,8 +65,14 @@ jobs:
       - name: 📦 Build package
         run: dotnet pack --configuration Release
 
-      - name: 🚀 Push package
+      - name: 🚀 Push package to GitHub Packages
         run: >-
           dotnet nuget push **/*.nupkg
           --source https://nuget.pkg.github.com/alexmg/index.json
           --api-key ${{ secrets.GITHUB_TOKEN }}
+
+      - name: 🚀 Push package to NuGet.org
+        run: >-
+          dotnet nuget push **/*.nupkg
+          --source https://api.nuget.org/v3/index.json
+          --api-key ${{ secrets.NUGET_API_KEY }}
