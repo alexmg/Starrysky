@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.3](https://github.com/alexmg/Starrysky/compare/v1.0.2...v1.0.3) (2025-02-04)
+
+
+### 🐛 Bug Fixes
+
+* Use trusted domain for logo URL in README ([f1f9b9a](https://github.com/alexmg/Starrysky/commit/f1f9b9a184e731a313863a5a6c9b5a2d8dff0d95))
+
 ## [1.0.2](https://github.com/alexmg/Starrysky/compare/v1.0.1...v1.0.2) (2025-02-04)
 
 
