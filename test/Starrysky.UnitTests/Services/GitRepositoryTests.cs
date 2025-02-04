@@ -3,7 +3,6 @@ using LibGit2Sharp.Handlers;
 using Microsoft.Extensions.Options;
 using Octokit;
 using Starrysky.Services;
-using Credentials = LibGit2Sharp.Credentials;
 using Repository = LibGit2Sharp.Repository;
 using Signature = LibGit2Sharp.Signature;
 
