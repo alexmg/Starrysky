@@ -3,6 +3,8 @@
 ![Logo](./icon.png)
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://github.com/alexmg/Starrysky/blob/main/LICENSE)
+[![Nuget](https://img.shields.io/nuget/v/Starrysky?label=NuGet)](https://www.nuget.org/packages/Starrysky)
+[![Continous Integration](https://github.com/alexmg/Starrysky/actions/workflows/release-please.yml/badge.svg?branch=main)](https://github.com/alexmg/Starrysky/actions/workflows/release-please.yml)
 [![Open in VS Code](https://img.shields.io/badge/Open%20in%20VS%20Code-blue?logo=visualstudiocode)](https://open.vscode.dev/alexmg/Starrysky)
 
 Starrysky is a .NET tool that posts a random GitHub star to Bluesky. It helps you share interesting repositories you have starred on GitHub with your Bluesky followers.
