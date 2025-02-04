@@ -1,5 +1,27 @@
 # Changelog
 
+## [1.0.2](https://github.com/alexmg/Starrysky/compare/v1.0.1...v1.0.2) (2025-02-04)
+
+
+### 🌲 Dependencies
+
+* Update TestableIO.System.IO.Abstractions.Wrappers to 21.3.1 ([f1b7101](https://github.com/alexmg/Starrysky/commit/f1b71018b3526434f0bec29598b2514abde3aced))
+
+
+### 📖 Documentation Improvements
+
+* Additional badges in README ([81b3bb3](https://github.com/alexmg/Starrysky/commit/81b3bb32a6fcc29bc0f129d6d5e9c91872ca9aab))
+* Improve wording in README instructions ([09658f2](https://github.com/alexmg/Starrysky/commit/09658f21b6e76b0bd188aa0d977e972a8b92d7e9))
+* Include dry-run argument in README example workflow ([c3d7df9](https://github.com/alexmg/Starrysky/commit/c3d7df9afc350139b549cdc64658c1b2adebd561))
+* Update block style for command in README ([e98e786](https://github.com/alexmg/Starrysky/commit/e98e786ed63036e869cd713b5aa4da285930118d))
+* Update secret names in README ([f95428a](https://github.com/alexmg/Starrysky/commit/f95428ac585e8c80fd5ddd5e6497def2b64b8030))
+
+
+### 🎨 Design Improvements
+
+* Add language injections to JSON strings ([38fd013](https://github.com/alexmg/Starrysky/commit/38fd01311186a04350cd03b8f1d14b14d660c3fb))
+* Remove unused using statement ([a219fcf](https://github.com/alexmg/Starrysky/commit/a219fcfb4514fedde7c3996ddf955f581b153935))
+
 ## [1.0.1](https://github.com/alexmg/Starrysky/compare/v1.0.0...v1.0.1) (2025-01-30)
 
 
