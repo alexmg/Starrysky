@@ -29,7 +29,6 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="BlueskySharp" Version="0.24.11.2923-beta-0921c9b8f" />
     <PackageReference Include="DotNet.ReproducibleBuilds" Version="1.2.25" PrivateAssets="All" />
     <PackageReference Include="Dumpify" Version="0.6.6" />
     <PackageReference Include="idunno.Bluesky" Version="0.2.1-prerelease" />
