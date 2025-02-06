@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.0.4](https://github.com/alexmg/Starrysky/compare/v1.0.3...v1.0.4) (2025-02-06)
+
+
+### 📖 Documentation Improvements
+
+* Add packages used to credits in README ([5fa28f1](https://github.com/alexmg/Starrysky/commit/5fa28f1abb0f73cdbecef63158fbff572a7dcfb8))
+* Default for dryRun input on push event ([a5453ea](https://github.com/alexmg/Starrysky/commit/a5453ead65b7704d4797fd833db4866c9ab1dfbd))
+
 ## [1.0.3](https://github.com/alexmg/Starrysky/compare/v1.0.2...v1.0.3) (2025-02-04)
 
 
