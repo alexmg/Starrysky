@@ -142,4 +142,23 @@ The workflow includes the `workflow_dispatch` event to allow for manual triggeri
 
 ## Credits
 
+Starrysky uses the following libraries (be sure to check them out):
+
+- [Spectre.Console.Cli](https://spectreconsole.net/)
+- [Octokit .NET SDK](https://github.com/octokit/dotnet-sdk)
+- [idunno.Bluesky](https://github.com/blowdart/idunno.Bluesky)
+- [LibGit2Sharp](https://github.com/libgit2/libgit2sharp)
+- [Dumpify](https://github.com/MoaidHathot/Dumpify)
+- [System.IO.Abstractions](https://github.com/TestableIO/System.IO.Abstractions)
+- [AssemblyMetadata.Generators](https://github.com/loresoft/AssemblyMetadata.Generators/)
+- [DotNet.ReproducibleBuilds](https://github.com/dotnet/reproducible-builds)
+- [SonarAnalyzer.CSharp](https://github.com/SonarSource/sonar-dotnet)
+- [JetBrains.Annotations](https://github.com/JetBrains/JetBrains.Annotations)
+- [Coverlet](https://github.com/coverlet-coverage/coverlet)
+- [GitHubActionsTestLogger](https://github.com/Tyrrrz/GitHubActionsTestLogger)
+- [NSubstitute](https://nsubstitute.github.io/)
+- [Shouldly](https://docs.shouldly.org/)
+- [xUnit](https://xunit.net/)
+- [Xunit.Combinatorial](https://github.com/AArnott/Xunit.Combinatorial)
+
 Icon made by [meaicon](https://www.flaticon.com/authors/meaicon) from [www.flaticon.com](https://www.flaticon.com/)
