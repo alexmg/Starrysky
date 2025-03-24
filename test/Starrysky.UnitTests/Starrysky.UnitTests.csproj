@@ -7,6 +7,8 @@
     <IsPackable>false</IsPackable>
     <!-- https://github.com/xunit/xunit/issues/3087 -->
     <NoWarn>xUnit1051</NoWarn>
+    <TestingPlatformDotnetTestSupport>true</TestingPlatformDotnetTestSupport>
+    <UseMicrosoftTestingPlatformRunner>true</UseMicrosoftTestingPlatformRunner>
   </PropertyGroup>
 
   <ItemGroup>
@@ -31,7 +33,7 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="xunit.v3" Version="1.1.0" />
+    <PackageReference Include="xunit.v3" Version="2.0.0" />
   </ItemGroup>
 
   <ItemGroup>
