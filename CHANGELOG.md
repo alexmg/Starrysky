@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.0.5](https://github.com/alexmg/Starrysky/compare/v1.0.4...v1.0.5) (2025-03-24)
+
+
+### 🌲 Dependencies
+
+* Update NuGet packages ([efb5506](https://github.com/alexmg/Starrysky/commit/efb550615c427ffa683f26076c6594afba2966f8))
+* Update xunit.v3 to 2.0.0 ([ff9d3ac](https://github.com/alexmg/Starrysky/commit/ff9d3ac4dd19d217b81f81bd7b99f39f667f9303))
+
 ## [1.0.4](https://github.com/alexmg/Starrysky/compare/v1.0.3...v1.0.4) (2025-02-06)
 
 
