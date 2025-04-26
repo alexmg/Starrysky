@@ -35,6 +35,6 @@ internal sealed class PostBuilder : IPostBuilder
             repository.Description);
         builder.EmbedRecord(external);
 
-        return builder.ToPostRecord();
+        return builder.ToPost();
     }
 }
