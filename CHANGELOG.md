@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.6](https://github.com/alexmg/Starrysky/compare/v1.0.5...v1.0.6) (2025-05-15)
+
+
+### 🌲 Dependencies
+
+* Update NuGet packages ([82a63c0](https://github.com/alexmg/Starrysky/commit/82a63c076edff467aa05adde081f94814f835313))
+
 ## [1.0.5](https://github.com/alexmg/Starrysky/compare/v1.0.4...v1.0.5) (2025-04-26)
 
 
