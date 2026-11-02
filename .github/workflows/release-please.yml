@@ -65,6 +65,12 @@ jobs:
       - name: 📦 Build package
         run: dotnet pack --configuration Release
 
+      - name: 🔐 NuGet login
+        uses: NuGet/login@8d196754b4036150537f80ac539e15c2f1028841 # v1.2.0
+        id: login
+        with:
+          user: ${{ secrets.NUGET_USER }}
+    
       - name: 🚀 Push package to GitHub Packages
         run: >-
           dotnet nuget push **/*.nupkg
@@ -75,4 +81,4 @@ jobs:
         run: >-
           dotnet nuget push **/*.nupkg
           --source https://api.nuget.org/v3/index.json
-          --api-key ${{ secrets.NUGET_API_KEY }}
+          --api-key ${{steps.login.outputs.NUGET_API_KEY}}
