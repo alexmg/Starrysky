@@ -1,3 +1,4 @@
+using System.Net.NetworkInformation;
 using idunno.Bluesky;
 using idunno.Bluesky.Embed;
 using idunno.Bluesky.RichText;
@@ -33,7 +34,7 @@ internal sealed class PostBuilder : IPostBuilder
             repository.HtmlUrl,
             $"GitHub - {repository.GetName()}",
             repository.Description);
-        builder.EmbedRecord(external);
+        builder.WithEmbed(external);
 
         return builder.ToPost();
     }

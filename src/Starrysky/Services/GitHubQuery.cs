@@ -8,7 +8,7 @@ internal sealed class GitHubQuery : IGitHubQuery
 
     public GitHubQuery(IGitHubClientFactory clientFactory) => _clientFactory = clientFactory;
 
-    public async Task<IReadOnlyList<Repository>> GetRepositories()
+    public async Task<IReadOnlyList<Repository>> GetRepositories(CancellationToken cancellationToken)
     {
         var client = _clientFactory.GetClient();
         var options = new ApiOptions { PageSize = 100 };

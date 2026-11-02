@@ -105,12 +105,12 @@ public class StarryskyCommandTests
         var commandContext = new CommandContext([], Substitute.For<IRemainingArguments>(), "__default_command", null);
 
         IReadOnlyList<Repository> repositories = [Fakes.CreateRepository()];
-        gitHubQuery.GetRepositories().Returns(Task.FromResult(repositories));
+        gitHubQuery.GetRepositories(Arg.Any<CancellationToken>()).Returns(Task.FromResult(repositories));
 
         postHistory.GetPostedIds().Returns(Task.FromResult(new HashSet<long>()));
 
         // Act
-        var exitCode = await command.ExecuteAsync(commandContext, settings);
+        var exitCode = await command.ExecuteAsync(commandContext, settings, CancellationToken.None);
 
         // Assert
         exitCode.ShouldBe(0);

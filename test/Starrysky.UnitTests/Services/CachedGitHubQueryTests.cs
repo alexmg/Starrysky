@@ -17,7 +17,7 @@ public class CachedGitHubQueryTests
         var query = BuildQuery(null);
 
         // Act
-        var repos = await query.GetRepositories();
+        var repos = await query.GetRepositories(CancellationToken.None);
 
         // Assert
         repos.Count.ShouldBe(1);
@@ -33,12 +33,12 @@ public class CachedGitHubQueryTests
         var json = serializer.Serialize(new[] { repository });
         var cacheFile = Substitute.For<IFile>();
         cacheFile.Exists(path).Returns(true);
-        cacheFile.ReadAllTextAsync(path).Returns(Task.FromResult(json));
+        cacheFile.ReadAllTextAsync(path, Arg.Any<CancellationToken>()).Returns(Task.FromResult(json));
 
         var query = BuildQuery(cacheFile);
 
         // Act
-        var repos = await query.GetRepositories();
+        var repos = await query.GetRepositories(CancellationToken.None);
 
         // Assert
         repos.Count.ShouldBe(1);
@@ -52,13 +52,13 @@ public class CachedGitHubQueryTests
         string? json = null;
         var path = Path.Combine(Environment.CurrentDirectory, Constants.RepositoryCacheFileName);
         var cacheFile = Substitute.For<IFile>();
-        cacheFile.When(x => x.WriteAllTextAsync(path, Arg.Any<string?>()))
+        cacheFile.When(x => x.WriteAllTextAsync(path, Arg.Any<string?>(), Arg.Any<CancellationToken>()))
             .Do(x => json = x.ArgAt<string?>(1));
 
         var query = BuildQuery(cacheFile);
 
         // Act
-        var repos = await query.GetRepositories();
+        var repos = await query.GetRepositories(CancellationToken.None);
 
         // Assert
         repos.Count.ShouldBe(1);

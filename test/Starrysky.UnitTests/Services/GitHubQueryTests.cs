@@ -20,7 +20,7 @@ public class GitHubQueryTests
         var gitHubQuery = new GitHubQuery(factory);
 
         // Act
-        var repositories = await gitHubQuery.GetRepositories();
+        var repositories = await gitHubQuery.GetRepositories(CancellationToken.None);
 
         // Assert
         repositories.ShouldBeEquivalentTo(expected);

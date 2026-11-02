@@ -32,7 +32,7 @@ public class PostHistoryTests
         var historyFile = Substitute.For<IFile>();
         var path = Path.Combine(gitRepository.GetRepositoryRoot(), Constants.HistoryFileName);
         historyFile.Exists(path).Returns(true);
-        historyFile.ReadAllTextAsync(path).Returns(Task.FromResult(json));
+        historyFile.ReadAllTextAsync(path, Arg.Any<CancellationToken>()).Returns(Task.FromResult(json));
         var fileSystem = Substitute.For<IFileSystem>();
         fileSystem.File.Returns(historyFile);
         var history = new PostHistory(gitRepository, fileSystem);
@@ -61,6 +61,7 @@ public class PostHistoryTests
         await history.AddPosted(repository);
 
         // Assert
-        await historyFile.Received().WriteAllTextAsync(path, Arg.Any<string>());
+        await historyFile.Received().WriteAllTextAsync(
+            path, Arg.Any<string>(), Arg.Any<CancellationToken>());
     }
 }

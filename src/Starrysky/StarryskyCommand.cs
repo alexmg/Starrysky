@@ -119,12 +119,15 @@ internal sealed class StarryskyCommand : AsyncCommand<StarryskyCommand.Settings>
         }
     }
 
-    public override async Task<int> ExecuteAsync(CommandContext context, Settings settings)
+    public override async Task<int> ExecuteAsync(
+        CommandContext context,
+        Settings settings,
+        CancellationToken cancellationToken)
     {
         try
         {
             AnsiConsole.WriteLine($"Getting starred repositories from GitHub{(settings.Caching ? " (with caching)" : string.Empty)}");
-            var repositories = await _gitHubQuery.GetRepositories();
+            var repositories = await _gitHubQuery.GetRepositories(cancellationToken);
             AnsiConsole.MarkupLine($"Found [green]{repositories.Count}[/] total starred repositories in GitHub");
 
             var postedIds = await _postHistory.GetPostedIds();

@@ -4,5 +4,5 @@ namespace Starrysky.Services;
 
 internal interface IGitHubQuery
 {
-    Task<IReadOnlyList<Repository>> GetRepositories();
+    Task<IReadOnlyList<Repository>> GetRepositories(CancellationToken cancellationToken);
 }

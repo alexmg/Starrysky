@@ -23,11 +23,11 @@ internal sealed class CachedGitHubQuery : IGitHubQuery
         _gitRepository = gitRepository;
     }
 
-    public async Task<IReadOnlyList<Repository>> GetRepositories()
+    public async Task<IReadOnlyList<Repository>> GetRepositories(CancellationToken cancellationToken)
     {
         if (!_settings.Caching)
         {
-            return await _query.GetRepositories();
+            return await _query.GetRepositories(cancellationToken);
         }
 
         var serializer = new SimpleJsonSerializer();
@@ -35,14 +35,14 @@ internal sealed class CachedGitHubQuery : IGitHubQuery
 
         if (_fileSystem.File.Exists(cacheFilePath))
         {
-            var json = await _fileSystem.File.ReadAllTextAsync(cacheFilePath);
+            var json = await _fileSystem.File.ReadAllTextAsync(cacheFilePath, cancellationToken);
             return serializer.Deserialize<List<Repository>>(json);
         }
         else
         {
-            var repositories = await _query.GetRepositories();
+            var repositories = await _query.GetRepositories(cancellationToken);
             var json = serializer.Serialize(repositories);
-            await _fileSystem.File.WriteAllTextAsync(cacheFilePath, json);
+            await _fileSystem.File.WriteAllTextAsync(cacheFilePath, json, cancellationToken);
             return repositories;
         }
     }

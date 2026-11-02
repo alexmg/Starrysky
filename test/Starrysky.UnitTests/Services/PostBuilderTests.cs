@@ -49,9 +49,9 @@ public class PostBuilderTests
         post.Text.ShouldBe(text);
         var embed = (EmbeddedExternal)post.EmbeddedRecord!;
         embed.External.Title.ShouldBe($"GitHub - {repository.GetName()}");
-        embed.External.Uri.ShouldBe(new Uri(repository.HtmlUrl));
+        embed.External.Uri.ShouldBe(repository.HtmlUrl);
         embed.External.Description.ShouldBe(repository.Description);
         post.Facets!.Count.ShouldBe(facetUris.Length);
-        post.Facets.ShouldContain(x => facetUris.Any(f => ((LinkFacetFeature)x.Features[0]).Uri == f));
+        post.Facets.ShouldContain(x => facetUris.Any(f => ((LinkFacetFeature)x.Features[0]).Uri == f.ToString()));
     }
 }
